@@ -7,7 +7,7 @@ class About extends Component {
             <main>
                 <div>
                     <h1>About</h1>
-                    <p>This react app controls and monitors ROS-enabled robots through a Web Interface</p>
+                    <p>This react app controls and monitors a ROS-enabled robot Traveler through a Web Interface.</p>
                 </div>
             </main>
         );
