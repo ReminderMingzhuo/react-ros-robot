@@ -16,6 +16,8 @@ class Connection extends Component {
     
     init_connection() {
         this.state.ros = new ROSLIB.Ros();
+        //var ros2 = new ROSLIB.Ros();
+        //this.setState({ros: ros2});
         console.log(this.state.ros);
 
         this.state.ros.on("connection", () => {
@@ -35,9 +37,6 @@ class Connection extends Component {
                  }
             }, Config.RECONNECTION_TIMER);
         });
-
-        
-        
         try {
             this.state.ros.connect("ws://"+Config.ROSBRIDGE_SERVER_IP+":"+Config.ROSBRIDGE_SERVER_PORT);  
         } catch (error) {

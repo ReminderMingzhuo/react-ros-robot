@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Button} from "react-bootstrap";
+import {Row, Col, Container, Button} from "react-bootstrap";
 import Connection from './Connection';
+import Teleoperation from './Teleoperation';
+import LegTest from './LegTest';
 
 class Home extends Component {
     state = {
@@ -13,16 +15,44 @@ class Home extends Component {
 
     render() { 
         return (
-            <main>
-                <h1 className='text-center mt-3'>Robot Control Page</h1>
-                <h5>
-                    Experiment Times Counter:
-                    <p>{this.state.counter}</p>
-                </h5>
-                <Button onClick={() => this.increment_counter()}>Launch one time Experiment</Button>
+            <div>
+                <Container>
+                    <h1 className='text-center mt-3'>Robot Control Page</h1>
+                    <Row>
+                        <h1>1.</h1>
+                        <h2>Page Interactive Test</h2>
+                        <Col>
+                            <h3>
+                                Experiment Times Counter:
+                                {this.state.counter}
+                            </h3>
+                        </Col>
+                        <Col>
+                            <Button onClick={() => this.increment_counter()}>Launch one time Experiment</Button>
+                            
+                        </Col>
+                    </Row>
+                    <Row>
+                    <h1>2.</h1>
+                        <h2>Robot Connection Test</h2>
+                        <Connection />
+                    </Row>
+                    
+                    <Row>
+                        <h1>3.</h1>
+                        <h2>Robot Teleoperation Test</h2>
+                        <Teleoperation />
+                    </Row>
 
-                <Connection />
-            </main>
+                    <Row>
+                        <h1>4.</h1>
+                        <h2>Traveler Leg Test</h2>
+                        <LegTest />
+                    </Row>
+
+                </Container>
+                
+            </div>
             );
     }
 }
